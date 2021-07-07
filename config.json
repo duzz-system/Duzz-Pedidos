@@ -1,0 +1,8 @@
+{
+    "database": {
+        "dbAddress": "localhost",
+        "dbUser": "root",
+        "dbName": "duzz-pedidos",
+        "dbPass": ""
+    }
+}
