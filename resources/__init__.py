@@ -1,0 +1,1 @@
+from resources.pedidos import Pedidos
