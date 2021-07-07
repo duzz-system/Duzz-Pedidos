@@ -32,7 +32,7 @@ create table `lanches`(
 
 create table `pedidos`(
     id_pedido int primary key auto_increment,
-    id_lanches int,
+    lanches varchar(120),
     id_adicionais int,
     cliente varchar(60),
     momento datetime,
