@@ -62,16 +62,20 @@ function loadAuthData() {
 async function userLogged() {
   userData = getUserData();
   params = { receiver: userData.id };
-  logged = false
+  logged = false;
   if (params.receiver) {
     logged = await axios({
       method: "get",
       url: baseUrl + "/users/notifications",
       headers: loadAuthData(),
       params: params,
-    }).then((response) => {
-      return true;
-    });
+    })
+      .then((response) => {
+        return true;
+      })
+      .catch((error) => {
+        return false;
+      });
   }
 
   return logged || false;

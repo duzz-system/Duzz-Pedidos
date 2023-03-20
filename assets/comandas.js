@@ -22,11 +22,11 @@ async function exibirComanda(comanda) {
   productsTable =
     modalComanda.firstElementChild.getElementsByTagName("table")[0]
       .lastElementChild;
-    console.log(comandaData)
+  console.log(comandaData);
   for (value of comandaData.sale_metadata.products) {
-    itemQuantidade = JSON.parse(comandaData.products)
-    produto = await getProductName(value.item)
-    console.log(produto)
+    itemQuantidade = JSON.parse(comandaData.products);
+    produto = await getProductName(value.item);
+    console.log(produto);
     productsTable.innerHTML += `
     <tr>
       <td>${value.item}</td>
@@ -42,7 +42,7 @@ function ocultarComanda() {
   productsTable =
     modalComanda.firstElementChild.getElementsByTagName("table")[0]
       .lastElementChild;
-  productsTable.innerHTML = ""
+  productsTable.innerHTML = "";
 }
 
 // Quando o botão é clicado, exibe o modal
@@ -127,16 +127,20 @@ async function userLogged() {
       url: baseUrl + "/users/notifications",
       headers: loadAuthData(),
       params: params,
-    }).then((response) => {
-      return true;
-    });
+    })
+      .then((response) => {
+        return true;
+      })
+      .catch((error) => {
+        return false;
+      });
   }
 
   return logged || false;
 }
 
-async function getProductName(product){
-  if(!products[product]){
+async function getProductName(product) {
+  if (!products[product]) {
     produto = await axios({
       method: "get",
       url: baseUrl + "/products",
@@ -147,7 +151,7 @@ async function getProductName(product){
     });
     products[produto[0].id] = produto[0];
   }
-  return products[product]
+  return products[product];
 }
 generateComandas();
 // setInterval(generateComandas, 1000);
