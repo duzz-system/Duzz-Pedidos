@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Login</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #f4f7fd;
+      }
+      .login {
+        width: 350px;
+        height: 400px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        margin: 50px auto;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        color: #2e3a59;
+        margin-top: 50px;
+      }
+      img {
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+      }
+      input[type="text"],
+      input[type="password"],
+      input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+      button {
+        width: 100%;
+        background-color: #2e3a59;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #1e2a44;
+      }
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 16px;
+      }
+
+      .card {
+        text-align: center;
+        border: 1px solid #ccc;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+        border-radius: 4px;
+        padding: 16px;
+        width: 200px;
+      }
+
+      .card-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+
+      .card-content {
+        font-size: 16px;
+      }
+      .botao-flutuante {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9999;
+      }
+
+      .botao-flutuante a {
+        display: block;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        border-radius: 50%;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 36px;
+        text-decoration: none;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      }
+      /* Estilo do modal */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      /* Estilo do conteúdo do modal */
+      .modal-content {
+        background-color: #fefefe;
+        margin: 2% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 40%;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="grid-container">
+      <div class="card">
+        <img src="https://png.pngtree.com/png-clipart/20190516/original/pngtree-vector-plus-icon-png-image_4271236.jpg" width="100" 
+        height="120">
+    </div>`;
+    </div> -->
+    <div class="grid-container" id="cards"></div>
+    <div class="botao-flutuante">
+      <a href="#">+</a>
+    </div>
+    <div id="modal-comandas" class="modal">
+      <!-- O conteúdo do modal -->
+      <div class="modal-content">
+        <h2>Formulário</h2>
+        <table>
+          <thead>
+            <th>Produto/ Serviço</th>
+            <th></th>
+            <th>Quantidade</th>
+            <th>Valor unitário</th>
+            <th>Total</th>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        <form>
+          <!-- Seus campos de formulário aqui -->
+        </form>
+      </div>
+    </div>
+    <div id="modal" class="modal">
+      <!-- O conteúdo do modal -->
+      <div class="modal-content">
+        <h2>Formulário</h2>
+        <form>
+          <!-- Seus campos de formulário aqui -->
+        </form>
+      </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="assets/comandas.js"></script>
+  </body>
+</html>
